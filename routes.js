@@ -67,7 +67,7 @@ router.post("/:qID/comments", function(req, res) {
 	});
 });
 
-//PUT /questions/:qID/comments/:aID
+//PUT /posts/:qID/comments/:aID
 // edit a specific comment
 router.put("/:qID/comments/:aID",function(req, res){
 	req.comment.update(req.body, function(err, result){
@@ -76,7 +76,7 @@ router.put("/:qID/comments/:aID",function(req, res){
 	});
 });
 
-//DELETE /questions/:qID/comments/:aID
+//DELETE /posts/:qID/comments/:aID
 // delete a specific comment
 router.delete("/:qID/comments/:aID",function(req, res){
 	req.comment.remove(function(err){
@@ -87,8 +87,8 @@ router.delete("/:qID/comments/:aID",function(req, res){
 	});
 });
 
-//POST /questions/:qID/comments/:aID/vote-up
-//POST /questions/:qID/comments/:aID/vote-down
+//POST /posts/:qID/comments/:aID/vote-up
+//POST /posts/:qID/comments/:aID/vote-down
 // vote on a specific comment
 router.post("/:qID/comments/:aID/vote-:dir",
 	function(req, res, next){
